@@ -13,3 +13,4 @@ Course at [dotfiles.eieio.xyz](http://dotfiles.eieio.xyz).
 - Trackpad (Three Finger Drag and tap to Click)
 - .zshrc
 - Git (config and SSH)
+- Homebrew Installation
