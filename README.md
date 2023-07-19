@@ -11,6 +11,6 @@ Course at [dotfiles.eieio.xyz](http://dotfiles.eieio.xyz).
 - Mission Control Perference (Don't rearrange speces)
 - Finder Show Path Bar
 - Trackpad (Three Finger Drag and tap to Click)
-- .zshrc
+- .zshrc (DONE)
 - Git (config and SSH)
-- Homebrew Installation
+- Homebrew Installation (DONE)
