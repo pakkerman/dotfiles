@@ -14,3 +14,4 @@ Course at [dotfiles.eieio.xyz](http://dotfiles.eieio.xyz).
 - .zshrc (DONE)
 - Git (config and SSH)
 - Homebrew Installation (DONE)
+- Alfred (turn off default spotlight search hotkey and use Alfred instead)
