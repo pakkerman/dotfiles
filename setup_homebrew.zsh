@@ -11,4 +11,6 @@ echo "\n<<<< Starting homebrew setup >>>>\n"
 # https://github.com/Homebrew/homebrew-bundle/issues/474
 
 # Running installs inside Brewfile
+# Remember use 'brew bundle dump --describe' from time to time to record new installs
 brew bundle --verbose
+

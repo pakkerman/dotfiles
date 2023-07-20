@@ -31,17 +31,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 
 
-
-
-
-
-
-
-
-
-# ----- courese section -------------
-
-
+# ----- Dotfiles Course Section -------------
 # Set Variables
 # Syntax Highlighting for man Pages Using bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
@@ -56,9 +46,9 @@ alias exa='exa -laFh --git'
 
 
 # Customize Prompt(s)
-PROMPT='
-%1~ %L %# '
-RPROMPT='%*'
+# PROMPT='
+# %1~ %L %# '
+# RPROMPT='%*'
 
 
 # Add Location to $PATH Variable
@@ -75,8 +65,6 @@ function mkcd() {
 
 
 # Use ZSH Plugins
-
-
 
 # ...And Other Surprises
 
