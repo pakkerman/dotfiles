@@ -21,9 +21,11 @@ cask "alfred"
 cask "brave-browser"
 # Git client focusing on productivity
 cask "gitkraken"
+# Keyboard customizer
+cask "karabiner-elements"
 mas "Speedtest", id: 1153157709
 mas "The Unarchiver", id: 425424353
-# mas "WeChat", id: 836500024
+mas "WeChat", id: 836500024
 vscode "andrejunges.Handlebars"
 vscode "austenc.tailwind-docs"
 vscode "bradlc.vscode-tailwindcss"

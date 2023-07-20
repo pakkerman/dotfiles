@@ -3,7 +3,8 @@ Learning dotfiles. Automate the process of configuring a new machine.
 
 Course at [dotfiles.eieio.xyz](http://dotfiles.eieio.xyz).
 
-
+## July 20
+ - Added brew Karabiner-Element and symlinked to .config, and will start in the background after install.
 
 ## TODO
 - Terminal Perferences

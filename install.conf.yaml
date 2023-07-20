@@ -7,6 +7,7 @@
 - link:
     ~/.zshrc:
     ~/.gitconfig:
+    ~/.config/karabiner: karabiner
 
 - create:
     - ~/work
@@ -15,3 +16,7 @@
     - command: ./setup_homebrew.zsh
       stdout: true
       stderr: true
+
+    # After Installing Karabiner-Elements, this will open and then close the window to leave it running in the background
+    - command: open -a Karabiner-Elements
+    - command: osascript -e 'quit app "Karabiner-Elements"'
