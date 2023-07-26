@@ -45,6 +45,7 @@ alias ls='exa -laFh --git'
 alias exa='exa -laFh --git'
 
 
+
 # Customize Prompt(s)
 # PROMPT='
 # %1~ %L %# '
@@ -59,8 +60,32 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/contents/Resources/app/b
 
 
 # Write Handy Functions
+# Create new directory and cd into it
 function mkcd() {
 	mkdir -p "$@" && cd "$_";
+}
+
+# cd and open with code in one line
+function cc() {
+  if [ -n "$1" ]; then
+    cd "$1" && code .
+  else
+    echo "Usage: cc /path/to/your/directory"
+  fi
+}
+
+# Shorten "npx jest ..."
+function nj(){
+  if [ -n "$1" ]; then
+    npx jest "$1"
+  else
+    echo "Usage: nj [jest test file]"
+  fi
+}
+
+# Open remote repo on Github.com
+function openremote(){
+  git remote -v | grep origin | grep github.com -m 1 | awk '{print $2}' | xargs open
 }
 
 
