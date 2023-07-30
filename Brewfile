@@ -1,6 +1,7 @@
 tap "homebrew/bundle"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "hudochenkov/sshpass"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Modern replacement for 'ls'
@@ -9,23 +10,27 @@ brew "exa"
 brew "gh"
 # Distributed revision control system
 brew "git"
+# Simple zero-configuration command-line HTTP server
+brew "http-server"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
 # Mac App Store command-line interface
 brew "mas"
+# Remote terminal application
+brew "mosh"
 # Open source relational database management system
 brew "mysql"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Internet file retriever
+brew "wget"
 # Application launcher and productivity software
 cask "alfred"
 # Web browser focusing on privacy
 cask "brave-browser"
-# Git client focusing on productivity
-cask "gitkraken"
 # Keyboard customizer
 cask "karabiner-elements"
-mas "Speedtest", id: 1153157709
-mas "The Unarchiver", id: 425424353
-mas "WeChat", id: 836500024
+# Orchestrates virtual Ubuntu instances
 vscode "andrejunges.Handlebars"
 vscode "austenc.tailwind-docs"
 vscode "bradlc.vscode-tailwindcss"
@@ -38,6 +43,7 @@ vscode "dharmey.timer"
 vscode "DigitalBrainstem.javascript-ejs-support"
 vscode "dsznajder.es7-react-js-snippets"
 vscode "esbenp.prettier-vscode"
+vscode "formulahendry.auto-rename-tag"
 vscode "formulahendry.code-runner"
 vscode "GitHub.codespaces"
 vscode "heybourn.headwind"
@@ -57,6 +63,5 @@ vscode "ritwickdey.LiveServer"
 vscode "SimonSiefke.svg-preview"
 vscode "Tyriar.lorem-ipsum"
 vscode "vincaslt.highlight-matching-tag"
-vscode "xabikos.JavaScriptSnippets"
 vscode "yoavbls.pretty-ts-errors"
 vscode "yzhang.markdown-all-in-one"

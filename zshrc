@@ -15,7 +15,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="pygmalion"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(git)
 
@@ -85,7 +85,7 @@ function nj(){
 
 # Open remote repo on Github.com
 function openremote(){
-  git remote -v | grep origin | grep github.com -m 1 | awk '{print $2}' | xargs open
+  git remote -v | grep origin | grep github.com -m 1 | awk '{print $2}' | cut -d'@' -f2 | xargs open
 }
 
 
