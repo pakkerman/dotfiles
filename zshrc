@@ -85,7 +85,7 @@ function nj(){
 
 # Open remote repo on Github.com
 function openremote(){
-  git remote -v | grep origin | grep github.com -m 1 | awk '{print $2}' | xargs open
+  git remote -v | grep origin | grep github.com -m 1 | awk '{print $2}' | cut -d'@' -f2 | xargs open
 }
 
 
