@@ -4,12 +4,16 @@ tap "homebrew/services"
 tap "hudochenkov/sshpass"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Pack, ship and run any application as a lightweight container
+brew "docker"
 # Modern replacement for 'ls'
 brew "exa"
 # GitHub command-line tool
 brew "gh"
 # Distributed revision control system
 brew "git"
+# Platform built on V8 to build network applications
+brew "node"
 # Simple zero-configuration command-line HTTP server
 brew "http-server"
 # User-friendly cURL replacement (command-line HTTP client)
@@ -20,6 +24,8 @@ brew "mas"
 brew "mosh"
 # Open source relational database management system
 brew "mysql"
+# Fast, disk space efficient package manager
+brew "pnpm"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Internet file retriever
@@ -28,9 +34,24 @@ brew "wget"
 cask "alfred"
 # Web browser focusing on privacy
 cask "brave-browser"
+# Client for the Dropbox cloud storage service
+cask "dropbox"
+# System-wide audio equalizer
+cask "eqmac"
+# Git client focusing on productivity
+cask "gitkraken"
 # Keyboard customizer
 cask "karabiner-elements"
-# Orchestrates virtual Ubuntu instances
+# Controls and monitors all fans on Apple computers
+cask "macs-fan-control"
+# App to write, plan, collaborate, and get organized
+cask "notion"
+# Music streaming service
+cask "spotify"
+# Open-source code editor
+cask "visual-studio-code"
+# Multimedia player
+cask "vlc"
 vscode "andrejunges.Handlebars"
 vscode "austenc.tailwind-docs"
 vscode "bradlc.vscode-tailwindcss"
@@ -63,5 +84,6 @@ vscode "ritwickdey.LiveServer"
 vscode "SimonSiefke.svg-preview"
 vscode "Tyriar.lorem-ipsum"
 vscode "vincaslt.highlight-matching-tag"
+vscode "xabikos.JavaScriptSnippets"
 vscode "yoavbls.pretty-ts-errors"
 vscode "yzhang.markdown-all-in-one"
