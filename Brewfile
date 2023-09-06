@@ -38,20 +38,32 @@ cask "brave-browser"
 cask "dropbox"
 # System-wide audio equalizer
 cask "eqmac"
+# Web browser
+cask "firefox"
+# Menu bar app to monitor graphics card usage
+cask "gfxcardstatus"
 # Git client focusing on productivity
 cask "gitkraken"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2"
 # Keyboard customizer
 cask "karabiner-elements"
 # Controls and monitors all fans on Apple computers
 cask "macs-fan-control"
 # App to write, plan, collaborate, and get organized
 cask "notion"
+# Control your tools with a few keystrokes
+cask "raycast"
 # Music streaming service
 cask "spotify"
+# Open-source BitTorrent client
+cask "transmission"
 # Open-source code editor
 cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
+mas "WeChat", id: 836500024
+vscode "alefragnani.project-manager"
 vscode "andrejunges.Handlebars"
 vscode "austenc.tailwind-docs"
 vscode "bradlc.vscode-tailwindcss"
