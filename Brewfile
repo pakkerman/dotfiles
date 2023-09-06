@@ -5,8 +5,6 @@ tap "hudochenkov/sshpass"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Pack, ship and run any application as a lightweight container
-brew "docker"
-# Modern replacement for 'ls'
 brew "exa"
 # GitHub command-line tool
 brew "gh"
@@ -26,12 +24,12 @@ brew "mosh"
 brew "mysql"
 # Fast, disk space efficient package manager
 brew "pnpm"
+# Theme for zsh
+brew "powerlevel10k"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Internet file retriever
 brew "wget"
-# Application launcher and productivity software
-cask "alfred"
 # Web browser focusing on privacy
 cask "brave-browser"
 # Client for the Dropbox cloud storage service
@@ -62,7 +60,6 @@ cask "transmission"
 cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
-mas "WeChat", id: 836500024
 vscode "alefragnani.project-manager"
 vscode "andrejunges.Handlebars"
 vscode "austenc.tailwind-docs"

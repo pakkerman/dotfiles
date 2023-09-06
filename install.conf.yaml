@@ -6,6 +6,7 @@
 
 - link:
     ~/.zshrc:
+    ~/.p10k.zsh:
     ~/.gitconfig:
     ~/.config/karabiner:
       create: true
