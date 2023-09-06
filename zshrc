@@ -109,3 +109,8 @@ function openremote(){
 export PNPM_HOME="/Users/Pakk/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+
+# keybinds
+bindkey "[D" backward-word
+bindkey "[C" forward-word
