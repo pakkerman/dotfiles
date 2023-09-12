@@ -114,3 +114,10 @@ export PATH="$PNPM_HOME:$PATH"
 # keybinds
 bindkey "[D" backward-word
 bindkey "[C" forward-word
+
+# bun completions
+[ -s "/Users/pakk/.bun/_bun" ] && source "/Users/pakk/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
