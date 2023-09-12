@@ -2,9 +2,12 @@ tap "homebrew/bundle"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "hudochenkov/sshpass"
+tap "oven-sh/bun"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Pack, ship and run any application as a lightweight container
+brew "docker"
+# Modern replacement for 'ls'
 brew "exa"
 # GitHub command-line tool
 brew "gh"
@@ -26,10 +29,14 @@ brew "mysql"
 brew "pnpm"
 # Theme for zsh
 brew "powerlevel10k"
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Internet file retriever
 brew "wget"
+# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+brew "oven-sh/bun/bun"
 # Web browser focusing on privacy
 cask "brave-browser"
 # Client for the Dropbox cloud storage service
@@ -53,13 +60,7 @@ cask "notion"
 # Control your tools with a few keystrokes
 cask "raycast"
 # Music streaming service
-cask "spotify"
-# Open-source BitTorrent client
-cask "transmission"
-# Open-source code editor
 cask "visual-studio-code"
-# Multimedia player
-cask "vlc"
 vscode "alefragnani.project-manager"
 vscode "andrejunges.Handlebars"
 vscode "austenc.tailwind-docs"
