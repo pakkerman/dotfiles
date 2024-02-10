@@ -2,7 +2,7 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -53,6 +53,7 @@ export HOMEBREW_CASK_OPTS="--no-quarantine"
 # Create Aliases
 alias ls='exa -laFh --git'
 alias exa='exa -laFh --git'
+alias fman='compgen -c | fzf | xargs man'
 
 
 
@@ -72,30 +73,30 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/contents/Resources/app/b
 # Write Handy Functions
 # Create new directory and cd into it
 function mkcd() {
-	mkdir -p "$@" && cd "$_";
+    mkdir -p "$@" && cd "$_";
 }
 
 # cd and open with code in one line
 function cc() {
-  if [ -n "$1" ]; then
-    cd "$1" && code .
-  else
-    echo "Usage: cc /path/to/your/directory"
-  fi
+    if [ -n "$1" ]; then
+        cd "$1" && code .
+    else
+        echo "Usage: cc /path/to/your/directory"
+    fi
 }
 
 # Shorten "npx jest ..."
 function nj(){
-  if [ -n "$1" ]; then
-    npx jest "$1"
-  else
-    echo "Usage: nj [jest test file]"
-  fi
+    if [ -n "$1" ]; then
+        npx jest "$1"
+    else
+        echo "Usage: nj [jest test file]"
+    fi
 }
 
 # Open remote repo on Github.com
 function openremote(){
-  git remote -v | grep origin | grep github.com -m 1 | awk '{print $2}' | cut -d'@' -f2 | xargs open
+    git remote -v | grep origin | grep github.com -m 1 | awk '{print $2}' | cut -d'@' -f2 | xargs open
 }
 
 
@@ -121,3 +122,7 @@ bindkey "[C" forward-word
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+
+# scripts
+alias convertPNG="~/scripts/exif-tools/convert.sh $1"
