@@ -35,12 +35,6 @@ plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 
 
-
-
-
-
-
-
 # ----- Dotfiles Course Section -------------
 # Set Variables
 # Syntax Highlighting for man Pages Using bat
@@ -52,7 +46,7 @@ export HOMEBREW_CASK_OPTS="--no-quarantine"
 
 # Create Aliases
 alias ls='exa -laFh --git'
-alias exa='exa -laFh --git'
+alias tree='exa -T -L=1'
 alias fman='compgen -c | fzf | xargs man'
 
 
@@ -126,3 +120,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # scripts
 alias convertPNG="~/scripts/exif-tools/convert.sh $1"
+alias cht="~/scripts/cht.sh"
+alias fcd="~/scripts/fcd.sh"
