@@ -5,6 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -33,6 +34,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
+
+# Loading fzf keybindings
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
 # ----- Dotfiles Course Section -------------
@@ -121,4 +125,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # scripts
 alias convertPNG="~/scripts/exif-tools/convert.sh $1"
 alias cht="~/scripts/cht.sh"
-alias fcd="~/scripts/fcd.sh"
+
+fcd() {
+    local dir
+    dir=$(/bin/ls -d */ | fzf --preview 'exa -T -L=1 {}' --preview-window=down:40%) && cd "$dir"
+}
+
