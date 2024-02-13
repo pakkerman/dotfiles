@@ -129,15 +129,14 @@ alias cht="~/scripts/cht.sh"
 fcd() {
     local dir
     while true; do
-        dir=$(/bin/ls -Aapr | grep '/$' | fzf --preview 'exa -T -L=1 {}' --preview-window=down:60% --height 50%) && cd "$dir"
-        echo $?
+        dir=$(/bin/ls -AaFHGr | grep '[@/]$' | fzf --height 50% --preview 'exa -T -L=1 {}' --preview-window=up:60% --preview-label "$(pwd)" --preview-label-pos=bottom) && cd $(echo "$dir" | tr '[@/]' '/')
         if [[ $? -eq 130 ]]; then
-            break
-        elif [[ -n $dir ]]; then
-            cd "$dir"
-        else
             break
         fi
     done
 }
 
+
+flog(){
+    git log --oneline | fzf --multi --preview 'git show --color {+1}' --preview-label logs
+}
