@@ -128,6 +128,16 @@ alias cht="~/scripts/cht.sh"
 
 fcd() {
     local dir
-    dir=$(/bin/ls -d */ | fzf --preview 'exa -T -L=1 {}' --preview-window=down:40%) && cd "$dir"
+    while true; do
+        dir=$(/bin/ls -Aapr | grep '/$' | fzf --preview 'exa -T -L=1 {}' --preview-window=down:60% --height 50%) && cd "$dir"
+        echo $?
+        if [[ $? -eq 130 ]]; then
+            break
+        elif [[ -n $dir ]]; then
+            cd "$dir"
+        else
+            break
+        fi
+    done
 }
 
