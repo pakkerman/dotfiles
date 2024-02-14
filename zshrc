@@ -50,7 +50,7 @@ export HOMEBREW_CASK_OPTS="--no-quarantine"
 
 # Create Aliases
 alias ls='exa -laFh --git'
-alias tree='exa -T -L=1'
+alias tree='exa -T -L=1 --ignore-glob=node_modules'
 alias fman='compgen -c | fzf | xargs man'
 
 
