@@ -5,7 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -18,7 +17,6 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # source ~/powerlevel10k/powerlevel10k.zsh-theme
-
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -35,9 +33,12 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 
-# Loading fzf keybindings
+
+# Load fzf keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# zoxide
+eval "$(zoxide init zsh)"
 
 # ----- Dotfiles Course Section -------------
 # Set Variables
@@ -65,42 +66,10 @@ alias fman='compgen -c | fzf | xargs man'
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/contents/Resources/app/bin"
 
-
-
-
-# Write Handy Functions
-# Create new directory and cd into it
-function mkcd() {
-    mkdir -p "$@" && cd "$_";
-}
-
-# cd and open with code in one line
-function cc() {
-    if [ -n "$1" ]; then
-        cd "$1" && code .
-    else
-        echo "Usage: cc /path/to/your/directory"
-    fi
-}
-
-# Shorten "npx jest ..."
-function nj(){
-    if [ -n "$1" ]; then
-        npx jest "$1"
-    else
-        echo "Usage: nj [jest test file]"
-    fi
-}
-
 # Open remote repo on Github.com
 function openremote(){
     git remote -v | grep origin | grep github.com -m 1 | awk '{print $2}' | cut -d'@' -f2 | xargs open
 }
-
-
-# Use ZSH Plugins
-
-# ...And Other Surprises
 
 
 
@@ -109,8 +78,7 @@ export PNPM_HOME="/Users/Pakk/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
-
-# keybinds
+# keybinds for cursor nav
 bindkey "[D" backward-word
 bindkey "[C" forward-word
 
@@ -121,22 +89,16 @@ bindkey "[C" forward-word
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-
 # scripts
 alias convertPNG="~/scripts/exif-tools/convert.sh $1"
 alias cht="~/scripts/cht.sh"
+alias flog="~/.local/bin/flog.sh"
+source ~/.local/bin/fcd.sh
 
-fcd() {
-    local dir
-    while true; do
-        dir=$(/bin/ls -AaFHGr | grep '[@/]$' | fzf --height 50% --preview 'exa -T -L=1 {}' --preview-window=up:60% --preview-label "$(pwd)" --preview-label-pos=bottom) && cd $(echo "$dir" | tr '[@/]' '/')
-        if [[ $? -eq 130 ]]; then
-            break
-        fi
-    done
-}
+# key bind to scripts
+bindkey -s ^f "~/.local/bin/tmux-sessionizer.sh\n"
 
 
-flog(){
-    git log --oneline | fzf --multi --preview 'git show --color {+1}' --preview-label logs
-}
+
+
+
