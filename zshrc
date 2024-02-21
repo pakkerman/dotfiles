@@ -93,6 +93,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 alias convertPNG="~/scripts/exif-tools/convert.sh $1"
 alias cht="~/scripts/cht.sh"
 alias flog="~/.local/bin/flog.sh"
+alias fadd="~/.local/bin/fadd.sh"
 source ~/.local/bin/fcd.sh
 
 # key bind to scripts
