@@ -49,9 +49,12 @@ export HOMEBREW_CASK_OPTS="--no-quarantine"
 # Change ZSH options
 
 
-# Create Aliases
-alias ls='exa -laFh --git'
-alias tree='exa -T -L=1 --ignore-glob=node_modules'
+
+
+# Command Aliases
+alias vim='nvim'
+alias ls='exa -laFh --git --ignore-glob=".DS_Store"'
+alias tree='exa -FT -L=1 --ignore-glob=node_modules'
 alias fman='compgen -c | fzf | xargs man'
 
 
@@ -70,8 +73,6 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/contents/Resources/app/b
 function openremote(){
     git remote -v | grep origin | grep github.com -m 1 | awk '{print $2}' | cut -d'@' -f2 | xargs open
 }
-
-
 
 # pnpm
 export PNPM_HOME="/Users/Pakk/Library/pnpm"
@@ -94,12 +95,8 @@ alias convertPNG="~/scripts/exif-tools/convert.sh $1"
 alias cht="~/scripts/cht.sh"
 alias flog="~/.local/bin/flog.sh"
 alias fadd="~/.local/bin/fadd.sh"
+alias zrc="nvim ~/.zshrc"
 source ~/.local/bin/fcd.sh
 
 # key bind to scripts
 bindkey -s ^f "~/.local/bin/tmux-sessionizer.sh\n"
-
-
-
-
-
