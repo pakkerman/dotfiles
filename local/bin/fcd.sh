@@ -9,7 +9,15 @@ fcd() {
 
 	[[ -z $content ]] && return
 
-	dir=$(echo "$content" | fzf --height 50% --preview 'exa -TF -L=1 {}' --preview-window=right:40% --preview-label $(pwd) --preview-label-pos=bottom)
+	dir=$(
+		echo "$content" | fzf --height 50% \
+			--preview "exa -TF -L=1 {}" \
+			--preview-window=right:40% \
+			--preview-label "$(pwd)" \
+			--preview-label-pos=bottom \
+			--bind "right:change-preview(exa -TF -L=3 {})" \
+			--bind "left:change-preview(exa -TF -L=1 {})"
+	)
 
 	if [[ -n "$dir" ]]; then
 		cd "$dir" || exit
