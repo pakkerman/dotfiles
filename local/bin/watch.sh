@@ -6,6 +6,7 @@ script="$1"
 
 # Function to execute the script
 execute_script() {
+	clear
 	echo "Changes detected. Executing $script..."
 	bash "$script"
 }
