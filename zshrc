@@ -48,16 +48,11 @@ export HOMEBREW_CASK_OPTS="--no-quarantine"
 
 # Change ZSH options
 
-
-
-
 # Command Aliases
 alias vim='nvim'
 alias ls='exa -laFh --git --ignore-glob=".DS_Store"'
 alias tree='exa -FT -L=1 --ignore-glob=node_modules'
 alias fman='compgen -c | fzf | xargs man'
-
-
 
 # Customize Prompt(s)
 # PROMPT='
@@ -74,11 +69,6 @@ function openremote(){
     git remote -v | grep origin | grep github.com -m 1 | awk '{print $2}' | cut -d'@' -f2 | xargs open
 }
 
-# pnpm
-export PNPM_HOME="/Users/Pakk/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
-
 # keybinds for cursor nav
 bindkey "[D" backward-word
 bindkey "[C" forward-word
@@ -90,12 +80,17 @@ bindkey "[C" forward-word
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+# pnpm
+export PNPM_HOME="/Users/Pakk/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+
 # scripts
 alias convertPNG="~/scripts/exif-tools/convert.sh $1"
 alias cht="~/scripts/cht.sh"
 alias flog="~/.local/bin/flog.sh"
 alias fadd="~/.local/bin/fadd.sh"
-alias watch="~/.local/bin/watch.sh"
+alias watch="~/.local/bin/watch."
 alias zrc="nvim ~/.zshrc"
 source ~/.local/bin/fcd.sh
 
