@@ -36,6 +36,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Load fzf keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPTS="--reverse --margin 10% --border=bold"
 
 # zoxide
 eval "$(zoxide init zsh)"
