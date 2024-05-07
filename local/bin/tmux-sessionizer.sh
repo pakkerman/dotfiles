@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dirs=("$HOME/Dropbox/Coding" "$HOME/Dropbox/Coding/Projects" "$HOME/temp" "$HOME/Dropbox/Coding/learning/" "$HOME/scripts/")
+dirs=("$HOME/Dropbox/Coding" "$HOME/Dropbox/Coding/Projects" "$HOME/temp" "$HOME/Dropbox/Coding/learning" "$HOME/scripts")
 others="\n$HOME/dotfiles"
 
 session=$(
