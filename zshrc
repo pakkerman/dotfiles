@@ -91,7 +91,7 @@ alias convertPNG="~/scripts/exif-tools/convert.sh $1"
 alias cht="~/scripts/cht.sh"
 alias flog="~/.local/bin/flog.sh"
 alias fadd="~/.local/bin/fadd.sh"
-alias watch="~/.local/bin/watch."
+alias watch="~/.local/bin/watch.sh"
 alias zrc="nvim ~/.zshrc"
 source ~/.local/bin/fcd.sh
 
