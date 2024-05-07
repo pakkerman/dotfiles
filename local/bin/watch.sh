@@ -9,7 +9,7 @@ arg="$2"
 execute_script() {
 	clear
 	echo "Changes detected. Executing $script..."
-	bash "$script $arg"
+	bash "$script" "$arg"
 }
 
 # Execute the script once initially
@@ -18,5 +18,5 @@ execute_script
 # Watch for changes and execute the script
 while true; do
 	fswatch -1 "$script" >/dev/null
-	execute_script "$arg"
+	execute_script
 done
