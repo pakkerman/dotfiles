@@ -1,10 +1,17 @@
 #!/bin/bash
 
-dirs=("$HOME/Dropbox/Coding" "$HOME/temp" "$HOME/Dropbox/Coding/learning/" "$HOME/scripts/")
+dirs=("$HOME/Dropbox/Coding" "$HOME/Dropbox/Coding/Projects" "$HOME/temp" "$HOME/Dropbox/Coding/learning/" "$HOME/scripts/")
 others="\n$HOME/dotfiles"
 
-session=$(echo -e "$(find "${dirs[@]}" -maxdepth 1 -mindepth 1 -type d)" "$others" |
-	fzf --reverse --margin 10% --border=bold --border-label="Project Finder")
+session=$(
+	echo -e "$(find "${dirs[@]}" -maxdepth 1 -mindepth 1 -type d)" "$others" |
+		fzf --reverse \
+			--margin 10% \
+			--border=bold \
+			--border-label="Project Finder" \
+			--preview "bat {}/README.md" \
+			--preview-window bottom
+)
 
 session_name=$(basename "$session" | tr '.' '_')
 
