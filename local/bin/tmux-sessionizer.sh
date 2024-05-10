@@ -1,6 +1,12 @@
 #!/bin/bash
 
-dirs=("$HOME/Dropbox/Coding" "$HOME/Dropbox/Coding/Projects" "$HOME/temp" "$HOME/Dropbox/Coding/learning" "$HOME/scripts")
+dirs=(
+	"$HOME/Dropbox/Coding"
+	"$HOME/Dropbox/Coding/learning"
+	"$HOME/Dropbox/Coding/Projects"
+	"$HOME/temp"
+	"$HOME/scripts"
+)
 others="\n$HOME/dotfiles"
 
 session=$(
@@ -19,8 +25,16 @@ session=$(
 session="$HOME/$session"
 session_name=$(basename "$session" | tr '.' '_')
 
-if ! tmux has-session -t "$session_name" 2>/dev/null; then
-	tmux new-session -s "$session_name" -c "$session" -d "tmux new-window -d; nvim"
+#TODO: Fix when exit nvim the window will close.
+#Lead: on the "remain-on-exit" option
+#
+existing_session=$(tmux has-session -t "$session_name" 2>/dev/null)
+if ! "$existing_session"; then
+	tmux new-session \
+		-d \
+		-c "$session" \
+		-s "$session_name" \
+		"tmux new-window -d; nvim"
 fi
 
 tmux switch-client -t "$session_name"
