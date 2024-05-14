@@ -2,9 +2,13 @@
 	name = Pakkerman
 	email = 104409243+Pakkerman@users.noreply.github.com
 [core]
-	editor = code --wait
 	autocrlf = input
+	editor = nvim
 [diff]
 	tool = vscode
 [difftool "vscode"]
 	cmd = "code --wait --diff $LOCAL $REMOTE"
+[init]
+	defaultBranch = trunk
+[pull]
+	rebase = false
