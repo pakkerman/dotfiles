@@ -41,10 +41,12 @@ export FZF_DEFAULT_OPTS="--reverse --margin 5% --border=bold"
 # zoxide
 eval "$(zoxide init zsh)"
 
-# ----- Dotfiles Course Section -------------
-# Set Variables
-# Syntax Highlighting for man Pages Using bat
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+# Use nvim as man pager
+# Reference: Man section in help
+export MANPAGER='nvim +Man! +set\ nu +set\ rnu +set\ nowrap'
+export MANWIDTH=65
+
+
 export HOMEBREW_CASK_OPTS="--no-quarantine"
 
 # Change ZSH options
