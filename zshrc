@@ -88,6 +88,9 @@ export PNPM_HOME="/Users/Pakk/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
+# Golang
+export PATH=$PATH:$(go env GOPATH)/bin
+
 # scripts
 alias convertPNG="~/scripts/exif-tools/convert.sh $1"
 alias cht="~/scripts/cht.sh"
