@@ -102,3 +102,7 @@ source ~/.local/bin/fcd.sh
 
 # key bind to scripts
 bindkey -s ^f "~/.local/bin/tmux-sessionizer.sh\n"
+
+# Created by `pipx` on 2024-05-30 07:38:29
+export PATH="$PATH:/Users/pakk/.local/bin"
+if [ -f "/Users/pakk/.config/fabric/fabric-bootstrap.inc" ]; then . "/Users/pakk/.config/fabric/fabric-bootstrap.inc"; fi
