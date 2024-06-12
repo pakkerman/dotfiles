@@ -5,6 +5,7 @@ dirs=(
 	"$HOME/Dropbox/Coding/learning"
 	"$HOME/Dropbox/Coding/Projects"
 	"$HOME/temp"
+	"$HOME/git"
 	"$HOME/scripts"
 )
 others="\n$HOME/dotfiles"
