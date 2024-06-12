@@ -1,15 +1,17 @@
 #!/bin/bash
 
 # Path to the script you want to watch
-[[ -z "$1" ]] && echo "usage: watch file" && exit 1
-script="$1"
-arg="$2"
+[[ -z "$1" ]] && echo "usage: watch shell-program file [arg] " && exit 1
+[[ -z "$2" ]] && echo "Missing script file" && exit 1
+program="$1"
+script="$2"
+arg="$3"
 
 # Function to execute the script
 execute_script() {
 	clear
 	echo "Changes detected. Executing $script..."
-	bash "$script" "$arg"
+	"$program" "$script" "$arg"
 }
 
 # Execute the script once initially
