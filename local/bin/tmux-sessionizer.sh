@@ -35,7 +35,7 @@ if ! "$existing_session"; then
 		-d \
 		-c "$session" \
 		-s "$session_name" \
-		"tmux new-window -d; nvim"
+		"tmux new-window -d; nvim; exec $SHELL"
 fi
 
 tmux switch-client -t "$session_name"
