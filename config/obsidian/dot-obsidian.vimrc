@@ -66,3 +66,7 @@ map gsd{ vi{dva{p
 "
 "
 nnoremap vid :echo 123
+
+
+" change zt to mimic with scrolloff=4
+nnoremap zt zt4<C-y>
