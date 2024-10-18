@@ -443,6 +443,16 @@
                         },
                         {
                             "from": {
+                                "key_code": "escape"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "caps_lock"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
                                 "key_code": "right_command"
                             },
                             "to": [
@@ -468,16 +478,6 @@
                             "to": [
                                 {
                                     "key_code": "delete_forward"
-                                }
-                            ]
-                        },
-                        {
-                            "from": {
-                                "key_code": "escape"
-                            },
-                            "to": [
-                                {
-                                    "key_code": "caps_lock"
                                 }
                             ]
                         }
