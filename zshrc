@@ -53,8 +53,8 @@ export HOMEBREW_CASK_OPTS="--no-quarantine"
 
 # Command Aliases
 alias vim='nvim'
-alias ls='exa -laFh --git --ignore-glob=".DS_Store"'
-alias tree='exa -FT -L=1 --ignore-glob=node_modules'
+alias ls='eza -lahF --git --ignore-glob=".DS_Store"'
+alias tree='eza -TF -L=1 --ignore-glob=node_modules'
 alias fman='compgen -c | fzf | xargs man'
 
 # Customize Prompt(s)
