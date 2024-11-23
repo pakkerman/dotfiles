@@ -105,4 +105,16 @@ bindkey -s ^f "~/.local/bin/tmux-sessionizer.sh\n"
 
 # Created by `pipx` on 2024-05-30 07:38:29
 export PATH="$PATH:/Users/pakk/.local/bin"
+
 if [ -f "/Users/pakk/.config/fabric/fabric-bootstrap.inc" ]; then . "/Users/pakk/.config/fabric/fabric-bootstrap.inc"; fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/pakk/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/pakk/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/pakk/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/pakk/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+
+
+# postgresql
+export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
