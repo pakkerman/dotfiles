@@ -36,6 +36,9 @@ nnoremap <Space>dd :delete_file<CR>
 exmap go_to_def obcommand editor:follow-link
 nnoremap gd :go_to_def<CR>
 
+exmap find_file obcommand switcher:open
+nnoremap <Space>p :find_file<CR>
+
 " followed from the instruction in https://github.com/esm7/obsidian-vimrc-support?tab=readme-ov-file#surround-text-with-surround
 " with some modification to the keymap
 exmap surround_link surround [[ ]]
