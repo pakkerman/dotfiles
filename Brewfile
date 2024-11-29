@@ -13,7 +13,7 @@ brew "cmake"
 # Pack, ship and run any application as a lightweight container
 brew "docker"
 # Modern replacement for 'ls'
-brew "exa"
+brew "eza"
 # Perl lib for reading and writing EXIF metadata
 brew "exiftool"
 # EXIF and IPTC metadata manipulation library and tools
@@ -43,8 +43,6 @@ brew "mas"
 # Protocol buffers (Google's data interchange format)
 brew "protobuf"
 # Remote terminal application
-brew "mosh"
-# Open source relational database management system
 brew "mysql"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
@@ -73,10 +71,6 @@ cask "dropbox"
 # System-wide audio equalizer
 cask "eqmac"
 # Menu bar app to monitor graphics card usage
-cask "gfxcardstatus"
-# Git client focusing on productivity
-cask "gitkraken"
-# Client for the Google Drive storage service
 cask "google-drive"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
@@ -85,66 +79,11 @@ cask "karabiner-elements"
 # Controls and monitors all fans on Apple computers
 cask "macs-fan-control"
 # App to write, plan, collaborate, and get organized
-cask "notion"
-# Control your tools with a few keystrokes
 cask "raycast"
 # Music streaming service
 cask "spotify"
 # Open-source BitTorrent client
 cask "transmission"
 # Open-source code editor
-cask "visual-studio-code"
-# Multimedia player
 cask "vlc"
 # Multiplayer code editor
-cask "zed"
-vscode "alefragnani.project-manager"
-vscode "andrejunges.handlebars"
-vscode "austenc.tailwind-docs"
-vscode "bradlc.vscode-tailwindcss"
-vscode "burkeholland.simple-react-snippets"
-vscode "coenraads.bracket-pair-colorizer-2"
-vscode "cschlosser.doxdocgen"
-vscode "dbankier.vscode-quick-select"
-vscode "deerawan.vscode-faker"
-vscode "dharmey.timer"
-vscode "digitalbrainstem.javascript-ejs-support"
-vscode "dsznajder.es7-react-js-snippets"
-vscode "esbenp.prettier-vscode"
-vscode "formulahendry.auto-rename-tag"
-vscode "formulahendry.code-runner"
-vscode "github.codespaces"
-vscode "golang.go"
-vscode "googlecloudtools.cloudcode"
-vscode "heybourn.headwind"
-vscode "jakewilson.vscode-cdnjs"
-vscode "jdinhlife.gruvbox"
-vscode "kaiwood.center-editor-window"
-vscode "mads-hartmann.bash-ide-vscode"
-vscode "mattpocock.ts-error-translator"
-vscode "moalamri.inline-fold"
-vscode "ms-python.autopep8"
-vscode "ms-python.debugpy"
-vscode "ms-python.isort"
-vscode "ms-python.python"
-vscode "ms-python.vscode-pylance"
-vscode "ms-toolsai.jupyter"
-vscode "ms-toolsai.jupyter-keymap"
-vscode "ms-toolsai.jupyter-renderers"
-vscode "ms-toolsai.vscode-jupyter-cell-tags"
-vscode "ms-toolsai.vscode-jupyter-slideshow"
-vscode "mtxr.sqltools"
-vscode "mtxr.sqltools-driver-mysql"
-vscode "orta.vscode-twoslash-queries"
-vscode "pmndrs.pmndrs"
-vscode "prisma.prisma"
-vscode "ritwickdey.liveserver"
-vscode "sainnhe.gruvbox-material"
-vscode "shakram02.bash-beautify"
-vscode "simonsiefke.svg-preview"
-vscode "timonwong.shellcheck"
-vscode "tyriar.lorem-ipsum"
-vscode "vincaslt.highlight-matching-tag"
-vscode "xabikos.javascriptsnippets"
-vscode "yoavbls.pretty-ts-errors"
-vscode "yzhang.markdown-all-in-one"
