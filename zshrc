@@ -34,8 +34,8 @@ plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 
 
-# Load fzf keybindings
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 export FZF_DEFAULT_OPTS="--reverse --margin 5% --border=bold"
 
 # zoxide
@@ -118,3 +118,4 @@ if [ -f '/Users/pakk/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/
 
 # postgresql
 export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
+
