@@ -46,10 +46,7 @@ eval "$(zoxide init zsh)"
 export MANPAGER='nvim +Man! +set\ nu +set\ rnu +set\ nowrap'
 export MANWIDTH=65
 
-
 export HOMEBREW_CASK_OPTS="--no-quarantine"
-
-# Change ZSH options
 
 # Command Aliases
 alias vim='nvim'
@@ -113,8 +110,6 @@ if [ -f '/Users/pakk/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/pakk/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/pakk/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
-
 
 # postgresql
 export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
