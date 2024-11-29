@@ -2,24 +2,48 @@
     link:
       relink: true
 
-- clean: ['~']
+- clean: ["~"]
 
 - link:
     ~/.zshrc:
-    ~/.p10k.zsh:
-    ~/.gitconfig:
-    ~/.config/karabiner:
+      relink: true
       create: true
-      path: config/karabiner
+      path: root_configs/zshrc
 
-- create:
-    - ~/work
+    ~/.p10k.zsh:
+      relink: true
+      create: true
+      path: root_configs/p10k.zsh
 
-- shell:
-    - command: ./setup_homebrew.zsh
-      stdout: true
-      stderr: true
+    ~/.tmux.conf:
+      relink: true
+      create: true
+      path: root_configs/tmux.conf
 
-    # After Installing Karabiner-Elements, this will open and then close the window to leave it running in the background
-    - command: open -a Karabiner-Elements
-    - command: osascript -e 'quit app "Karabiner-Elements"'
+    ~/.gitconfig:
+      relink: true
+      create: true
+      path: root_configs/gitconfig
+
+    ~/.local/bin:
+      relink: true
+      create: true
+      glob: true
+      path: root_configs/local/bin/*
+
+    ~/.config/karabiner/:
+      relink: true
+      create: true
+      glob: true
+      path: root_configs/config/karabiner/
+# - create:
+#     - ~/work
+#
+# - shell:
+#     - command: ./setup_homebrew.zsh
+#       stdout: true
+#       stderr: true
+#
+#     # After Installing Karabiner-Elements, this will open and then close the window to leave it running in the background
+#     - command: open -a Karabiner-Elements
+#     - command: osascript -e 'quit app "Karabiner-Elements"'
