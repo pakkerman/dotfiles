@@ -36,6 +36,12 @@
       create: true
       glob: true
       path: root_configs/config/karabiner/
+
+    ~/.config/yazi/:
+      relink: true
+      create: true
+      glob: true
+      path: root_configs/config/yazi/
 # - create:
 #     - ~/work
 #
