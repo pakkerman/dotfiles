@@ -114,3 +114,4 @@ if [ -f '/Users/pakk/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/
 # postgresql
 export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
 
+export EDITOR=nvim
