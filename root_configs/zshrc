@@ -95,6 +95,7 @@ alias flog="~/.local/bin/flog.sh"
 alias fadd="~/.local/bin/fadd.sh"
 alias watch="~/.local/bin/watch.sh"
 alias zrc="nvim ~/.zshrc"
+alias exiftoolkit="$HOME/./git/scripts/exiftools/run.sh"
 source ~/.local/bin/fcd.sh
 
 # key bind to scripts
@@ -115,3 +116,4 @@ if [ -f '/Users/pakk/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/
 export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
 
 export EDITOR=nvim
+
