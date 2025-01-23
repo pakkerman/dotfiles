@@ -5,7 +5,8 @@ map k gk
 nmap $ g$
 nmap ^ g^
 nmap 0 g0
-nmap V g$vg0o
+" nmap V g$vg0o
+nmap V g0vg$
 
 inoremap jk <Esc>
 inoremap jK <Esc>
@@ -66,10 +67,7 @@ map gsd{ vi{dva{p
 
 
 " create markdown URL link
-"
-"
 nnoremap vid :echo 123
-
 
 " change zt to mimic with scrolloff=4
 nnoremap zt zt4<C-y>
