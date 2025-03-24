@@ -6,12 +6,13 @@
 program="$1"
 script="$2"
 arg="$3"
+script_root=$(dirname "$script")
 
 # Function to execute the script
 execute_script() {
-	clear
-	echo "Changes detected. Executing $script..."
-	"$program" "$script" "$arg"
+  clear
+  echo "Changes detected. Executing $script..."
+  "$program" "$script" "$arg"
 }
 
 # Execute the script once initially
@@ -19,6 +20,6 @@ execute_script
 
 # Watch for changes and execute the script
 while true; do
-	fswatch -1 "$script" >/dev/null
-	execute_script
+  fswatch -1 "$script_root" >/dev/null
+  execute_script
 done
