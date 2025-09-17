@@ -12,17 +12,30 @@ dirs=(
 
 others="\n$HOME/dotfiles"
 
+FZF_TITLE="| Project Sessionizer |"
+FZF_COLOR_OPTS=$(echo "
+dark,
+border:#89ddff,
+pointer:#add7ff,
+bg:#191919,
+label:#89ddff,
+info:#89ddff,
+bg:#030712
+" | tr -d "\n")
+
 session=$(
   echo -e "$(find "${dirs[@]}" -maxdepth 1 -mindepth 1 -type d)" "$others" |
     sed "s|$HOME/||g" |
     fzf \
-      --tmux 80% \
       --reverse \
+      --tmux 70% \
       --border=rounded \
       --margin=0% \
-      --border-label="| Project Finder |" \
+      --border-label="$FZF_TITLE" \
       --preview "if [ -f $HOME/{}/README.md ]; then bat $HOME/{}/README.md; else echo No README.md found in this directory; fi" \
-      --preview-window bottom
+      --preview-window bottom \
+      --color="$FZF_COLOR_OPTS"
+
 )
 
 [[ -z $session ]] && exit 0
