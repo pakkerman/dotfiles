@@ -15,15 +15,17 @@ others="\n$HOME/dotfiles"
 session=$(
   echo -e "$(find "${dirs[@]}" -maxdepth 1 -mindepth 1 -type d)" "$others" |
     sed "s|$HOME/||g" |
-    fzf --reverse \
-      --margin 10% \
+    fzf \
+      --tmux 80% \
+      --reverse \
       --border=rounded \
+      --margin=0% \
       --border-label="| Project Finder |" \
       --preview "if [ -f $HOME/{}/README.md ]; then bat $HOME/{}/README.md; else echo No README.md found in this directory; fi" \
       --preview-window bottom
 )
 
-[[ -z $session ]] && exit 1
+[[ -z $session ]] && exit 0
 
 session="$HOME/$session"
 session_name=$(basename "$session" | tr '.' '_')
@@ -37,7 +39,7 @@ if ! "$existing_session"; then
     -d \
     -c "$session" \
     -s "$session_name" \
-    "tmux new-window -d lazygit; nvim; exec $SHELL"
+    "tmux new-window -d lazygit; nvim"
 fi
 
 tmux switch-client -t "$session_name"
