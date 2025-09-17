@@ -19,4 +19,4 @@ window-decoration = false
 background-opacity = 0.94
 background-blur = 20 
 
-
+window-padding-x = 5
