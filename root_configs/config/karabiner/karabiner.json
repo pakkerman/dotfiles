@@ -13,21 +13,6 @@
                 },
                 "rules": [
                     {
-                        "description": "hold cap to control",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to_delayed_action": { "to_if_canceled": [{ "key_code": "delete_or_backspace" }] },
-                                "to_if_alone": { "key_code": "delete_or_backspace" },
-                                "to_if_held_down": { "key_code": "left_control" },
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Map Left Command + ijkl to Arrows",
                         "manipulators": [
                             {
