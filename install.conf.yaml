@@ -20,6 +20,11 @@
       create: true
       path: root_configs/tmux.conf
 
+    ~/.aerospace.toml:
+      relink: true
+      create: true
+      path: root_configs/aerospace.toml
+
     ~/.gitconfig:
       relink: true
       create: true

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Path to the script you want to watch
 [[ -z "$1" ]] && echo "usage: watch shell-program file [arg] [watchlist]" && exit 1
