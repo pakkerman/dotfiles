@@ -48,17 +48,6 @@ export MANWIDTH=65
 
 export HOMEBREW_CASK_OPTS="--no-quarantine"
 
-# Command Aliases
-alias vim='nvim'
-alias ls='eza -ax --icons --group-directories-first --git --ignore-glob=".DS_Store"'
-alias tree='eza -TF -L=1 --ignore-glob=node_modules'
-alias fman='compgen -c | fzf | xargs man'
-
-# Customize Prompt(s)
-# PROMPT='
-# %1~ %L %# '
-# RPROMPT='%*'
-
 
 # Add Location to $PATH Variable
 # Add Visual Studio Code (code)
@@ -88,14 +77,23 @@ export PATH="$PNPM_HOME:$PATH"
 # Golang
 export PATH=$PATH:$(go env GOPATH)/bin
 
-# scripts
+# aliases
+alias vim='nvim'
+alias zrc="nvim ~/.zshrc"
+alias ls='eza -ax --icons --group-directories-first --git --ignore-glob=".DS_Store"'
+alias tree='eza -TF -L=1 --ignore-glob=".DS_Store" --git-ignore'
+alias fman='compgen -c | fzf | xargs man'
 alias convertPNG="~/scripts/exif-tools/convert.sh $1"
 alias cht="~/scripts/cht.sh"
 alias flog="~/.local/bin/flog.sh"
 alias fadd="~/.local/bin/fadd.sh"
 alias watch="~/.local/bin/watch.sh"
-alias zrc="nvim ~/.zshrc"
 alias exiftoolkit="$HOME/./git/scripts/exiftools/run.sh"
+
+# Suffix aliases
+alias -s json='jless'
+alias -s md='bat'
+
 source ~/.local/bin/fcd.sh
 
 # key bind to scripts
@@ -105,10 +103,8 @@ bindkey -s ^f "~/.local/bin/tmux-sessionizer.sh\n"
 export PATH="$PATH:/Users/pakk/.local/bin"
 
 if [ -f "/Users/pakk/.config/fabric/fabric-bootstrap.inc" ]; then . "/Users/pakk/.config/fabric/fabric-bootstrap.inc"; fi
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/pakk/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/pakk/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/pakk/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/pakk/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
@@ -124,6 +120,7 @@ function min-window() {
 }
 
 # hooks 
+# chpwd, will ls the files in the changed location, also activate venv if presnet, deactivate if not.
 chpwd(){
    ls
 
@@ -138,4 +135,14 @@ chpwd(){
      deactivate
    fi
 }
+
+# zle, or zshell-line-editor
+copy-command(){
+  echo -n $BUFFER | pbcopy
+  zle -M  "Copied buffer to clipboard"
+}
+
+zle -N copy-command
+bindkey '^Xc' copy-command # copy current buffer
+
 
