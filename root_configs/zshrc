@@ -1,6 +1,8 @@
+ #
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -21,7 +23,6 @@ export FZF_DEFAULT_OPTS="--reverse --margin 5% --border=bold"
 eval "$(zoxide init zsh)"
 
 # Use nvim as man pager
-# Reference: Man section in help
 export MANPAGER='nvim +Man! +set\ nu +set\ rnu +set\ nowrap'
 export MANWIDTH=65
 export HOMEBREW_CASK_OPTS="--no-quarantine"
@@ -107,3 +108,17 @@ export PATH="$PATH:/Users/pakk/.local/bin"
 
 # postgresql
 export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
+
+# test terminal color support
+truecolor-rainbow() {
+  local i r g b
+  for ((i = 0; i < 77; i++)); do
+    r=$((255 - (i * 255 / 76)))
+    g=$((i * 510 / 76))
+    b=$((i * 255 / 76))
+    ((g > 255)) && g=$((510 - g))
+    printf '\033[48;2;%d;%d;%dm ' "$r" "$g" "$b"
+  done
+  tput sgr0
+  echo
+}
