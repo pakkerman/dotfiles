@@ -48,7 +48,6 @@ export MANWIDTH=65
 
 export HOMEBREW_CASK_OPTS="--no-quarantine"
 
-
 # Add Location to $PATH Variable
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/contents/Resources/app/bin"
@@ -81,6 +80,7 @@ export PATH=$PATH:$(go env GOPATH)/bin
 alias vim='nvim'
 alias zrc="nvim ~/.zshrc"
 alias ls='eza -ax --icons --group-directories-first --git --ignore-glob=".DS_Store"'
+alias ll='eza -lhax --icons --group-directories-first --git --ignore-glob=".DS_Store"'
 alias tree='eza -TF -L=1 --ignore-glob=".DS_Store" --git-ignore'
 alias fman='compgen -c | fzf | xargs man'
 alias convertPNG="~/scripts/exif-tools/convert.sh $1"
