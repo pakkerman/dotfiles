@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # FZF with git add and diff show in the preview
 # return will add item into staging

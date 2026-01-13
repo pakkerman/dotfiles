@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 dirs=(
   "$HOME/Dropbox/Coding"
