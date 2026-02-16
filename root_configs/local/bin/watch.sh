@@ -13,7 +13,9 @@ echo "watching ${watchlist[*]}"
 # Function to execute the script
 execute_script() {
   clear
-  echo "file changed, re-running command: $*"
+  # echo "file changed, re-running command: $*"
+  printf '\e[30;43;1;3m file changed, re-running command: %s\e[0m\n' "$*"
+
   "$@"
 }
 
