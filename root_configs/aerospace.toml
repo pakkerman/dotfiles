@@ -98,13 +98,14 @@ automatically-unhide-macos-hidden-apps = false
     ctrl-comma = 'layout accordion tiles'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-    ctrl-left = 'focus --ignore-floating --boundaries all-monitors-outer-frame left'
-    ctrl-down = 'focus --ignore-floating --boundaries all-monitors-outer-frame down'
-    ctrl-up = 'focus --ignore-floating --boundaries all-monitors-outer-frame up'
-    ctrl-right = 'focus --ignore-floating --boundaries all-monitors-outer-frame right'
+    ctrl-left = 'focus left'
+    ctrl-down = 'focus down'
+    ctrl-up = 'focus up'
+    ctrl-right = 'focus right'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move
     alt-8 = 'join-with left'
+    ctrl-alt-9 = 'layout floating tiling'
     alt-0 = 'join-with right'
 
     ctrl-shift-left = 'swap left'
@@ -116,7 +117,6 @@ automatically-unhide-macos-hidden-apps = false
     ctrl-minus = 'resize smart -50'
     ctrl-equal = 'resize smart +50'
 
-    alt-9 = 'layout floating tiling'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
     ctrl-1 = 'workspace 1'
@@ -218,33 +218,38 @@ automatically-unhide-macos-hidden-apps = false
     shift-down = ['volume set 0', 'mode main']
 
 
-
+# floating window on everything upon open
 [[on-window-detected]]
-  if.app-id = 'com.apple.finder'
-  run = ['layout floating']
-
-[[on-window-detected]]
-  if.app-id = 'com.apple.Preview'
-  run = ['layout floating']
-
-[[on-window-detected]]
-  if.app-id = 'com.apple.TextEdit'
-  run = ['layout floating']
-
-[[on-window-detected]]
-  if.app-id = 'com.mitchellh.ghostty'
-  run = ['layout floating']
-
-[[on-window-detected]]
-  if.app-id = 'com.isaacmarovitz.Whisky'
-  run = ['layout floating']
-
-[[on-window-detected]]
-  if.app-id = 'com.apple.ActivityMonitor'
-  run = ['layout floating']
-
-[[on-window-detected]]
-  if.window-title-regex-substring = 'Picture-in-Picture'
-  run = ['layout floating']
+    run=['layout floating']
 
 
+# floating layout on specific apps open
+# [[on-window-detected]]
+#   if.app-id = 'com.apple.finder'
+#   run = ['layout floating']
+#
+# [[on-window-detected]]
+#   if.app-id = 'com.apple.Preview'
+#   run = ['layout floating']
+#
+# [[on-window-detected]]
+#   if.app-id = 'com.apple.TextEdit'
+#   run = ['layout floating']
+#
+# [[on-window-detected]]
+#   if.app-id = 'com.mitchellh.ghostty'
+#   run = ['layout floating']
+#
+# [[on-window-detected]]
+#   if.app-id = 'com.isaacmarovitz.Whisky'
+#   run = ['layout floating']
+#
+# [[on-window-detected]]
+#   if.app-id = 'com.apple.ActivityMonitor'
+#   run = ['layout floating']
+#
+# [[on-window-detected]]
+#   if.window-title-regex-substring = 'Picture-in-Picture'
+#   run = ['layout floating']
+#
+#
