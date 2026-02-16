@@ -35,7 +35,7 @@ function openremote(){
 # keybinds for cursor nav
 bindkey "[D" backward-word
 bindkey "[C" forward-word
-bindkey -s ^f "~/.local/bin/tmux-sessionizer.sh\n"
+# bindkey -s ^f "~/.local/bin/tmux-sessionizer.sh\n"
 
 
 # aliases
@@ -51,6 +51,7 @@ alias flog="~/.local/bin/flog.sh"
 alias fadd="~/.local/bin/fadd.sh"
 alias watch="~/.local/bin/watch.sh"
 alias exiftoolkit="$HOME/./git/scripts/exiftools/run.sh"
+alias etk="$HOME/./git/scripts/exiftools/run.sh"
 
 # Suffix aliases
 alias -s json='jless'
