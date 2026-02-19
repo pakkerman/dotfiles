@@ -10,20 +10,16 @@ dirs=(
   "$HOME/image-generation/stable-diffusion-webui"
 )
 
-others="\n$HOME/dotfiles"
+others="$HOME/dotfiles"
 
 FZF_TITLE="| Project Sessionizer |"
-FZF_COLOR_OPTS=$(echo "
-  dark,
-  bg:#18181b,
-  border:#89ddff,
-  pointer:#add7ff,
-  label:#89ddff,
-  info:#89ddff
-" | tr -d " \n")
+FZF_COLOR_OPTS="dark,bg:#18181b,border:#89ddff,pointer:#add7ff,label:#89ddff,info:#89ddff"
 
 session=$(
-  echo -e "$(find "${dirs[@]}" -maxdepth 1 -mindepth 1 -type d)" "$others" |
+  {
+    find "${dirs[@]}" -maxdepth 1 -mindepth 1 -type d 2>/dev/null
+    echo "$others"
+  } |
     sed "s|$HOME/||g" |
     fzf \
       --reverse \
@@ -33,24 +29,31 @@ session=$(
       --margin=0% \
       --border-label="$FZF_TITLE" \
       --preview-window bottom \
-      --preview "if [ -f $HOME/{}/README.md ]; then bat $HOME/{}/README.md; else echo No README.md found in this directory; fi"
+      --preview 'if [[ -f $HOME/{}/README.md ]]; then\
+                  bat \
+                    --theme Dracula \
+                    --terminal-width=$FZF_PREVIEW_COLUMNS \
+                    --color=always \
+                    $HOME/{}/README.md 2>/dev/null \
+                    || cat $HOME/{}/README.md; 
+                  else echo No README.md found in {};
+                  fi'
 )
 
 [[ -z $session ]] && exit 0
 
-session="$HOME/$session"
-session_name=$(basename "$session" | tr '.' '_')
+session_path="$HOME/$session"
+session_name=$(basename "$session_path" | tr '.' '_')
 
-# TODO: Fix when exit nvim the window will close.
-# lead: on the "remain-on-exit" option
+if ! tmux has-session -t "$session_name" 2>/dev/null; then
+  # Create new session with a shell, so it doesn't close when nvim exits
+  tmux new-session -d -s "$session_name" -c "$session_path"
 
-existing_session=$(tmux has-session -t "$session_name" 2>/dev/null)
-if ! "$existing_session"; then
-  tmux new-session \
-    -d \
-    -c "$session" \
-    -s "$session_name" \
-    "tmux new-window -d lazygit; nvim"
+  # Setup windows
+  tmux new-window -d -t "$session_name" -n "lazygit" -c "$session_path" "lazygit"
+
+  # Launch nvim in the first window
+  tmux send-keys -t "$session_name:1" "nvim" C-m
 fi
 
 tmux switch-client -t "$session_name"
