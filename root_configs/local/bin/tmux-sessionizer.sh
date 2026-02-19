@@ -41,9 +41,9 @@ session=$(
 session="$HOME/$session"
 session_name=$(basename "$session" | tr '.' '_')
 
-#TODO: Fix when exit nvim the window will close.
-#Lead: on the "remain-on-exit" option
-#
+# TODO: Fix when exit nvim the window will close.
+# lead: on the "remain-on-exit" option
+
 existing_session=$(tmux has-session -t "$session_name" 2>/dev/null)
 if ! "$existing_session"; then
   tmux new-session \
