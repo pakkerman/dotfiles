@@ -13,3 +13,5 @@
 	templateDir = /Users/pakk/.git-template/
 [pull]
 	rebase = false
+[coderabbit]
+	machineId = cli/7bfaa43f85464954838ba450b2ab21ac
