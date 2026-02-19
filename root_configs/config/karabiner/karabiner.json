@@ -49,21 +49,85 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "W = left click",
+                                "description": "A = left click",
                                 "from": {
-                                    "key_code": "w",
+                                    "key_code": "a",
                                     "modifiers": { "mandatory": ["right_option"] }
                                 },
                                 "to": [{ "pointing_button": "button1" }],
                                 "type": "basic"
                             },
                             {
-                                "description": "R = right click",
+                                "description": "Z = right click",
+                                "from": {
+                                    "key_code": "z",
+                                    "modifiers": { "mandatory": ["right_option"] }
+                                },
+                                "to": [{ "pointing_button": "button2" }],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "T = scroll up",
+                                "from": {
+                                    "key_code": "t",
+                                    "modifiers": { "mandatory": ["right_option"] }
+                                },
+                                "to": [{ "mouse_key": { "vertical_wheel": -48 } }],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "G = scroll down",
+                                "from": {
+                                    "key_code": "g",
+                                    "modifiers": { "mandatory": ["right_option"] }
+                                },
+                                "to": [{ "mouse_key": { "vertical_wheel": 48 } }],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "R = scroll left",
                                 "from": {
                                     "key_code": "r",
                                     "modifiers": { "mandatory": ["right_option"] }
                                 },
-                                "to": [{ "pointing_button": "button2" }],
+                                "to": [{ "mouse_key": { "horizontal_wheel": -48 } }],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "W = scroll right",
+                                "from": {
+                                    "key_code": "w",
+                                    "modifiers": { "mandatory": ["right_option"] }
+                                },
+                                "to": [{ "mouse_key": { "horizontal_wheel": 48 } }],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "b = position to middle",
+                                "from": {
+                                    "key_code": "b",
+                                    "modifiers": { "mandatory": ["right_option"] }
+                                },
+                                "to": [
+                                    {
+                                        "software_function": {
+                                            "set_mouse_cursor_position": {
+                                                "screen": 0,
+                                                "x": "50%",
+                                                "y": "50%"
+                                            }
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Q = boost speed 2X",
+                                "from": {
+                                    "key_code": "q",
+                                    "modifiers": { "mandatory": ["right_option"] }
+                                },
+                                "to": [{ "mouse_key": { "speed_multiplier": 3.0 } }],
                                 "type": "basic"
                             }
                         ]
