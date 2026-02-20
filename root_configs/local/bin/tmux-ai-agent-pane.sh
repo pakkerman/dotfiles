@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # ~/.local/bin/tmux-ai-agent-pane.sh
 # Manages AI tools in a dedicated side pane using window-swapping
 
 TOOLS="opencode codex gemini coderabbit claude"
 SIDE_PANE_MARKER="@ai_side"
 TOOL_MARKER="@ai_tool"
-BG_WINDOW_PREFIX="agents-bg-"
+BG_WINDOW_PREFIX="agent-"
 
 # Require an active tmux session/server.
 if [[ -z "${TMUX:-}" ]] || ! tmux display-message -p '#{session_id}' >/dev/null 2>&1; then
