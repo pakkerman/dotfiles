@@ -1,5 +1,13 @@
+# os
 .DS_Store
+
+# lockfiles
 Brewfile.lock.json
+
+# env
+.env
+
+# misc
 automatic_backups/
 .zsh_history
 *.log
